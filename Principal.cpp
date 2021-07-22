@@ -48,16 +48,8 @@ void iniciarPacientes(vector<string>);
 void iniciarVisitas(vector<string>);
 void iniciarFacturas(vector<string>);
 void iniciarMedicamentos(vector<string>);
-/***********************************************************************
-Metodos genericos que permiten trabajar con cualquier tipo de dato
-son utiles para reducir y crear un codigo mas limpio y entendible
 
-Por lo cual definimos un template y con una variable typename T,
-para especificar que podra recibir cualquier tipo de dato donde
-se creen variables tipo T
-
-Se Puede usar cualquier nombre en lugar de T, por estandar se utiliza.
-***********************************************************************/
+//Metodos genericos 
 template <typename T>
 void escrituraArchivosGenerica(T array[], string archivo, int final){
 	string ruta = "archivos_dat/"+archivo+".dat";//Creamos la ruta dinamica
@@ -379,7 +371,7 @@ void agregarPacientes(){
 	pacientes[indicePacientes]->setNombre(validarTipoEntrada<string>(auxiliar, "Ingrese Nombre: "));
 	pacientes[indicePacientes]->setAlergias(validarTipoEntrada<string>(auxiliar, "Ingrese Alergias: "));
 	pacientes[indicePacientes]->setUltimaVisita (validarTipoEntrada<string>(auxiliar, "Ingrese Fecha Ultima Visita: "));
-	pacientes[indicePacientes]->setEdad(validarTipoEntrada<int>(edad, "Ingrese Edad(años cerrados): "));
+	pacientes[indicePacientes]->setEdad(validarTipoEntrada<int>(edad, "Ingrese Edad(aÃ±os cerrados): "));
 	pacientes[indicePacientes]->setObservaciones(validarTipoEntrada<string>(auxiliar, "Ingrese Observaciones: "));
 	pacientes[indicePacientes]->generarId();
 	indicePacientes++;
